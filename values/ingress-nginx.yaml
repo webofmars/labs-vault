@@ -1,0 +1,19 @@
+controller:
+  replicaCount: 1
+  config:
+    proxy-body-size: 2m
+    server-tokens: "false"
+    ssl-redirect: "true"
+    use-forwarded-headers: "true"
+    use-proxy-protocol: "false"
+  # metrics:
+  #   enabled: true
+  #   serviceMonitor:
+  #     enabled: true
+  #     namespace: cattle-prometheus
+  ingressClassResource:
+    default: true
+  watchIngressWithoutClass: true
+
+# generate with 'openssl dhparam 1024 2>/dev/null | base64'
+dhParam: LS0tLS1CRUdJTiBESCBQQVJBTUVURVJTLS0tLS0KTUlHSEFvR0JBTHN5RmU2L3BOdnhTUHh0eHU0aDNtZlZmY29hWEhhNkJOb0YvaHZjZjA4dTFISGlxbUVjUFJzOQovNGhvR0tSU2szQmR6K3pJWlhvUmdYaG05a2NLeXVjdFNsSHlPM2VvdWZrbTJEKzNEWE5FUXQ5SGx1d1I4S0hCClYvQ1d0bHFLTE9kMHZ0NDhFZ1FVaHB5eENCZXNkVWowZklwdk04VVcydDFTOFk1MnRicWJBZ0VDCi0tLS0tRU5EIERIIFBBUkFNRVRFUlMtLS0tLQo=

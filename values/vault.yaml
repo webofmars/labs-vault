@@ -1,0 +1,31 @@
+server:
+  ingress:
+    enabled: true
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt
+    hosts:
+      - host: vault.dev.195.154.71.156.sslip.io
+        paths: []
+    tls:
+      - hosts:
+        - vault.dev.195.154.71.156.sslip.io
+        secretName: vault-ingress-cert
+
+  dataStorage:
+    enabled: true
+    size: 1Gi
+
+  ha:
+    enabled: false
+    replicas: 1
+    raft:
+      enabled: true
+
+ui:
+  enabled: true
+
+injector:
+  enabled: true
+
+csi:
+  enabled: true
